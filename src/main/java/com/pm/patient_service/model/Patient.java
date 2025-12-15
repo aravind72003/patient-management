@@ -12,6 +12,9 @@ import java.util.UUID;
 
 @Entity
 public class Patient {
+
+    public Patient() {}
+
     @Id
     @GeneratedValue
     private UUID id;

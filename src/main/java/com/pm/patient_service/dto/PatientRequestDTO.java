@@ -1,30 +1,27 @@
 package com.pm.patient_service.dto;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
-public class PatientResponseDTO {
-    @NotNull
-    private String id;
-
-    @NotNull
+public class PatientRequestDTO {
+    @NotBlank(message = "Name is required")
+    @Size(max=100, message = "Name cannot exceed 100 characters")
     private String name;
 
-    @NotNull
+    @NotBlank(message = "Email is required")
+    @Email(message = "Email should be valid")
     private String email;
 
-    @NotNull
+    @NotBlank(message = "Address is required")
     private String address;
 
-    @NotNull
+    @NotBlank(message = "DOB is required")
     private String dateOfBirth;
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
+    @NotNull(message = "Registered Date is Required")
+    private String registeredDate;
 
     public String getName() {
         return name;
@@ -56,5 +53,13 @@ public class PatientResponseDTO {
 
     public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
+    }
+
+    public String getRegisteredDate() {
+        return registeredDate;
+    }
+
+    public void setRegisteredDate(String registeredDate) {
+        this.registeredDate = registeredDate;
     }
 }
