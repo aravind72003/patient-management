@@ -1,10 +1,21 @@
 package com.pm.patient_service.dto;
 
+import jakarta.validation.constraints.NotNull;
+
 public class PatientResponseDTO {
+    @NotNull
     private String id;
+
+    @NotNull
     private String name;
+
+    @NotNull
     private String email;
+
+    @NotNull
     private String address;
+
+    @NotNull
     private String dateOfBirth;
 
     public String getId() {
